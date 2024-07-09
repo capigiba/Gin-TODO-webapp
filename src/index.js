@@ -4,12 +4,14 @@ import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import Login from './components/Login';
+import ErrorPage from './components/ErrorPage';
+import Register from './components/Register';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage/>,
     children: [
       {index: true, element: <HomePage />},
       // {
@@ -44,6 +46,10 @@ const router = createBrowserRouter([
       //   path: "/graphql",
       //   element: <GraphQL />,
       // },
+      {
+        path: "/register",
+        element: <Register />,
+      },
       {
         path: "/login",
         element: <Login />,
